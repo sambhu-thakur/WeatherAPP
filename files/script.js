@@ -28,25 +28,19 @@ searchCity = () => {
         }).catch((error) => {
 //             console.log(error);
         })
-
     // console.log(getWeatherData(city));
-
 }
+showWeatherData = (weatherData) => {
+    document.getElementById("city-name").innerText = weatherData.name;
+    document.getElementById("temp").innerText = weatherData.main.temp;
+    document.getElementById("min-temp").innerText = weatherData.main.temp_min;
+    document.getElementById("max-temp").innerText = weatherData.main.temp_max;
+    document.getElementById("weather-type").innerText = weatherData.weather[0].description;
+}
+
 // added jquery to slide up the wheather output
 $(document).ready(function(){
 
 $("#search").click(function(){ $("#weather-output").slideDown("slow");
 });
 });
-showWeatherData = (weatherData) => {
-
-    document.getElementById("city-name").innerText = weatherData.name;
-    document.getElementById("temp").innerText = weatherData.main.temp;
-    document.getElementById("min-temp").innerText = weatherData.main.temp_min;
-    document.getElementById("max-temp").innerText = weatherData.main.temp_max;
-    document.getElementById("weather-type").innerText = weatherData.weather[0].description;
-
-
-
-}
-

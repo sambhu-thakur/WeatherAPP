@@ -32,7 +32,12 @@ searchCity = () => {
     // console.log(getWeatherData(city));
 
 }
+// added jquery to slide up the wheather output
+$(document).ready(function(){
 
+$("#search").click(function(){ $("#weather-output").slideDown("slow");
+});
+});
 showWeatherData = (weatherData) => {
 
     document.getElementById("city-name").innerText = weatherData.name;
